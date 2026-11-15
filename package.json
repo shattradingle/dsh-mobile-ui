@@ -1,0 +1,50 @@
+{
+  "name": "dsh-mobile-ui",
+  "version": "0.1.0",
+  "description": "A phone layout for the DeepSeek Harness web GUI: drawer sidebars, edge swipe, keyboard-aware composer, Enter-to-send.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "mobile",
+    "phone",
+    "responsive"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "INSTALL_AGENT.md",
+    "LICENSE",
+    "test_phone.py"
+  ],
+  "scripts": {
+    "test": "python3 test_phone.py"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shattradingle/dsh-mobile-ui.git"
+  },
+  "homepage": "https://github.com/shattradingle/dsh-mobile-ui#readme",
+  "bugs": {
+    "url": "https://github.com/shattradingle/dsh-mobile-ui/issues"
+  }
+}
