@@ -116,11 +116,16 @@ xvfb-run -a python3 test_phone.py
 Exit code 0 means all checks passed. Screenshots land in
 `/tmp/dsh-mobile-ui-out/` (override with `DSH_MOBILE_OUT`).
 
-A clean-install check was run from a fresh `DSH_HOME`: `dsh plugin --profile web
-add <path to this repo>` added the dependency and appended `dsh-mobile-ui` to
-`dsh.profile.bundles`; the plugin loaded on the next host start and the phone
-layout was active at 390x844 (`window.__dshMobileUI.version = 0.1.0`). The
-screenshots above come from that clean profile, so they contain no real
+Two clean-install checks were run from fresh `DSH_HOME`s:
+
+1. `dsh plugin --profile web add <local checkout>` — dependency saved as `link:`,
+   bundle appended to `dsh.profile.bundles`.
+2. `dsh plugin --profile web add github:shattradingle/dsh-mobile-ui` — dependency
+   saved as `github:…`, bundle appended, package version 0.1.0 installed.
+
+After a host restart both pages had `window.__dshMobileUI.version = "0.1.0"`,
+grid `0px 390px 0px`, a 390px conversation column and the 40px menu button. The
+screenshots above come from one of those clean profiles, so they contain no real
 sessions.
 
 ## How it works
