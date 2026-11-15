@@ -1,5 +1,7 @@
 # dsh-mobile-ui
 
+[github.com/shattradingle/dsh-mobile-ui](https://github.com/shattradingle/dsh-mobile-ui) — a DSH bundle, MIT.
+
 A phone layout for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web GUI.
 
 DSH's web UI is a three-column desktop layout. On a phone the left rail eats
@@ -40,15 +42,16 @@ Wider windows (>= 900px) are untouched; the plugin is inert on the desktop.
 ### A. With an AI agent (recommended)
 
 Copy the prompt from [INSTALL_AGENT.md](INSTALL_AGENT.md) into your coding
-agent, replacing `<REPO>` with this repository (or a local checkout path). The
+agent. It defaults to this repository; replace the source line with a local
+checkout path if you are installing from disk. The
 prompt tells it to install the bundle, verify the boot graph, and run the phone
 check without sending any real messages.
 
 ### B. DSH plugin CLI
 
 ```bash
-# from a git repository
-dsh plugin --profile web add github:OWNER/dsh-mobile-ui
+# from GitHub
+dsh plugin --profile web add github:shattradingle/dsh-mobile-ui
 # or from a local checkout (pnpm accepts a path or file: spec)
 dsh plugin --profile web add /path/to/dsh-mobile-ui
 ```

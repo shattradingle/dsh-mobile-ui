@@ -1,13 +1,13 @@
 # Install with an AI agent
 
-Copy the block below into your coding agent (Claude Code, Codex, DSH, …).
-Replace `<REPO>` with the repository URL or a local path to a checkout of
-`dsh-mobile-ui`. The agent should not need anything else.
+Copy the block below into your coding agent (Claude Code, Codex, DSH, …). It
+defaults to the public repository; replace the source line with a local checkout
+path if you are installing from disk. The agent should not need anything else.
 
 ```text
 Install the dsh-mobile-ui plugin into my DeepSeek Harness web GUI.
 
-Repo/source: <REPO>
+Repo/source: https://github.com/shattradingle/dsh-mobile-ui
 
 Steps:
 1. Read the repo README and INSTALL_AGENT.md first. This is a DSH client bundle
@@ -16,7 +16,7 @@ Steps:
    ~/.dsh. Confirm the profile's package.json lists a web app bundle (for example
    @deepseek-ai/dsh-web-app).
 3. Install the bundle with the official path:
-     dsh plugin --profile web add <REPO>
+     dsh plugin --profile web add github:shattradingle/dsh-mobile-ui
    If that command refuses or the DSH version is too old, fall back to a manual
    install: add "dsh-mobile-ui": "link:<abs path to checkout>" to the profile's
    dependencies, add "dsh-mobile-ui" to dsh.profile.bundles, then run
